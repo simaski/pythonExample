@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Contactanos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+{% if info_enviado %}
+    Gracias por enviar un comentario, nos pondremos en contacto contigo.
+{% else %}
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+    <input type="submit" value="submit">
+    </form>
+{% endif %}
+</body>
+</html>
